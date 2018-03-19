@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="77dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:background="#bd000000"
+    android:padding="0.5dp"
+    android:layout_height="109dp">
+
+    <ImageView
+        android:id="@+id/imgPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <io.github.iamvaliyev.warble.widget.CheckedImageView
+        android:id="@+id/imgCheck"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher" />
+
+</FrameLayout>
