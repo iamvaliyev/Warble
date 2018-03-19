@@ -29,12 +29,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.iamvaliyev.warble.R;
 import io.github.iamvaliyev.warble.model.ItemModel;
 import io.github.iamvaliyev.warble.model.Page;
-import io.github.iamvaliyev.warble.widget.CheckedImageView;
 
 public class PagesAdapter extends RecyclerView.Adapter {
 
@@ -123,27 +120,21 @@ public class PagesAdapter extends RecyclerView.Adapter {
                 return false;
             }
         }).into(itemViewHolder.imageView);
-
-//        new PageRenderer(itemViewHolder.imageView, itemViewHolder.lnLoad, position).execute(position);
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgPage)
         public ImageView imageView;
-
-        @BindView(R.id.imgBookmark)
         public ImageView imgBookmark;
-
-        @BindView(R.id.txtHover)
         public TextView txtHover;
-
-        @BindView(R.id.lnLoad)
         public LinearLayout lnLoad;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            imageView = itemView.findViewById(R.id.imgPage);
+            imgBookmark = itemView.findViewById(R.id.imgBookmark);
+            txtHover = itemView.findViewById(R.id.txtHover);
+            lnLoad = itemView.findViewById(R.id.lnLoad);
         }
     }
 

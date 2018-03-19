@@ -21,8 +21,6 @@ import com.orm.util.NamingHelper;
 import java.io.File;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.iamvaliyev.warble.adapter.SingleSelectionAdapter;
 import io.github.iamvaliyev.warble.model.Book;
 import io.github.iamvaliyev.warble.model.ItemModel;
@@ -30,34 +28,27 @@ import io.github.iamvaliyev.warble.model.Page;
 import io.github.iamvaliyev.warble.pager.PDFAdapter;
 
 public class MainActivity extends AppCompatActivity implements SingleSelectionAdapter.OnItemSelectedListener {
-    //
-//    @BindView(R.id.pdfViewPager)
-//    PDFViewPager pdfViewPager;
-//
-//    PDFPagerAdapter pdfPagerAdapter;
 
-    @BindView(R.id.selection_list)
     RecyclerView recyclerView;
-
-    SingleSelectionAdapter adapter;
-
-    @BindView(R.id.viewpager)
     ViewPager viewpager;
-
-    @BindView(R.id.my_toolbar)
     Toolbar myToolbar;
 
     LinearLayoutManager linearLayoutManager;
 
+    SingleSelectionAdapter adapter;
     Book book;
-
     Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+
+        recyclerView = findViewById(R.id.selection_list);
+        viewpager = findViewById(R.id.viewpager);
+        myToolbar = findViewById(R.id.my_toolbar);
+
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

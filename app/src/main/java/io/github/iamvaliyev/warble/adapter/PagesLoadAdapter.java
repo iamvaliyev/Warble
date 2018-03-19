@@ -20,8 +20,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.iamvaliyev.warble.R;
 import io.github.iamvaliyev.warble.model.ItemModel;
 
@@ -52,15 +50,13 @@ public class PagesLoadAdapter extends RecyclerView.Adapter {
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgPage)
         public ImageView imageView;
-
-        @BindView(R.id.lnLoad)
         public LinearLayout lnLoad;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            imageView = itemView.findViewById(R.id.imgPage);
+            lnLoad = itemView.findViewById(R.id.lnLoad);
         }
     }
 }

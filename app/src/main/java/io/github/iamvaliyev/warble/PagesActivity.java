@@ -23,8 +23,6 @@ import com.orm.util.NamingHelper;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.iamvaliyev.warble.adapter.PagesAdapter;
 import io.github.iamvaliyev.warble.adapter.PagesLoadAdapter;
 import io.github.iamvaliyev.warble.model.Book;
@@ -32,10 +30,7 @@ import io.github.iamvaliyev.warble.widget.ItemClickSupport;
 
 public class PagesActivity extends AppCompatActivity {
 
-    @BindView(R.id.my_toolbar)
     Toolbar myToolbar;
-
-    @BindView(R.id.selection_list)
     RecyclerView recyclerView;
 
     PagesAdapter adapter;
@@ -58,7 +53,10 @@ public class PagesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pages);
-        ButterKnife.bind(this);
+
+        recyclerView = findViewById(R.id.selection_list);
+        myToolbar = findViewById(R.id.my_toolbar);
+
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);

@@ -15,8 +15,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.iamvaliyev.warble.R;
 import io.github.iamvaliyev.warble.model.ItemModel;
 import io.github.iamvaliyev.warble.widget.CheckedImageView;
@@ -112,15 +110,13 @@ public class SingleSelectionAdapter extends RecyclerView.Adapter {
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgCheck)
         public CheckedImageView imgCheck;
-
-        @BindView(R.id.imgPage)
         public ImageView imageView;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            imgCheck = itemView.findViewById(R.id.imgCheck);
+            imageView = itemView.findViewById(R.id.imgPage);
         }
     }
 
